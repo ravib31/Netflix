@@ -10,12 +10,11 @@ import { auth } from "../utils/Firebase";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
-
+import { AVATAR } from "../utils/Constants";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const name = useRef(null);
   const email = useRef(null);
@@ -36,10 +35,12 @@ const Login = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
-          updateProfile(user ,{
-            displayName: name.current.value, photoURL: "https://avatars.githubusercontent.com/u/107496019?v=4"
-          }).then(() => {
-            const { uid, email, displayName, photoURL } = auth.currentUser;
+          updateProfile(user, {
+            displayName: name.current.value,
+            photoURL: AVATAR,
+          })
+            .then(() => {
+              const { uid, email, displayName, photoURL } = auth.currentUser;
               dispatch(
                 addUser({
                   uid: uid,
@@ -48,14 +49,14 @@ const Login = () => {
                   photoURL: photoURL,
                 })
               );
-            navigate("/browse")
-          }).catch((error) => {
-            setErrorMessage(error.message)
-          });
+            })
+            .catch((error) => {
+              setErrorMessage(error.message);
+            });
           // Signed up
-          
+
           // console.log(user)
-         
+
           // ...
         })
         .catch((error) => {
@@ -74,8 +75,7 @@ const Login = () => {
           // Signed in
           const user = userCredential.user;
           // console.log(user)
-          navigate("/browse")
-          
+
           // ...
         })
         .catch((error) => {
@@ -103,7 +103,7 @@ const Login = () => {
         </h1>
         {!isSignInForm && (
           <input
-          ref={name}
+            ref={name}
             type="text"
             placeholder="Enter Your Name"
             className="p-4 my-4 w-full bg-gray-900 rounded-md"

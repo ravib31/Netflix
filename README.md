@@ -14,8 +14,19 @@
 - Implement Sign In user API
 - Setup Redux Store with userSlice
 - Implement Sign Out
-- Update Profile 
+- Update Profile
+- Private Routing Implementation
+- Unsubscribed to the onAuthStateChanged callBack
+- Add hardcoded values in the constants  file
+- register TMDB API & create netflix App & get access token
 - Fetch Movies from TMDB
+- Custom Hook for playing background video
+- Create movieSlice
+- Update store with movie data
+- Main container and Secondary Container
+- Fetch the movie trailer in the main Container
+- Update the store with trailer video data
+- Embedded the Youtube video and make it autoplay  
 
 #Features
 
