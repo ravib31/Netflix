@@ -26,7 +26,14 @@
 - Main container and Secondary Container
 - Fetch the movie trailer in the main Container
 - Update the store with trailer video data
-- Embedded the Youtube video and make it autoplay  
+- Embedded the Youtube video and make it autoplay
+- Build Secondary component
+- build movies List
+- Build Movie card
+- Build Custom hooks for different categories of movies
+- GPT Search Page
+- GPT Search Bar
+- Multi-language Feature 
 
 #Features
 

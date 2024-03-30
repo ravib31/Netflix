@@ -8,3 +8,14 @@ export const API_OPTIONS = {
       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYWE3MGY0NDc4ODcyMmRkMmU0YmY2YzQ1ZDJiMGI2OCIsInN1YiI6IjY2MDZjNWNmOGEwZTliMDE0OTRjMGEyZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.zhfvxP_lphGa_iRvnSogDMXDmeXwJpDvfSr4HsGW-5s'
     }
   };
+
+  export const IMG_CDN_URL ="https://image.tmdb.org/t/p/w500"
+
+  export const BG_IMAGE= "https://assets.nflxext.com/ffe/siteui/vlv3/9d3533b2-0e2b-40b2-95e0-ecd7979cc88b/a3873901-5b7c-46eb-b9fa-12fea5197bd3/IN-en-20240311-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+
+export const SUPPORTED_LANGUAGES = [
+    { identifier: 'en', name: 'English' },
+    { identifier: 'hindi', name: 'Hindi' },
+    { identifier: 'spanish', name: 'Spanish' },
+    { identifier: 'bhojpuri', name: 'Bhojpuri' }
+]
