@@ -17,7 +17,7 @@
 - Update Profile
 - Private Routing Implementation
 - Unsubscribed to the onAuthStateChanged callBack
-- Add hardcoded values in the constants  file
+- Add hardcoded values in the constants file
 - register TMDB API & create netflix App & get access token
 - Fetch Movies from TMDB
 - Custom Hook for playing background video
@@ -26,14 +26,25 @@
 - Main container and Secondary Container
 - Fetch the movie trailer in the main Container
 - Update the store with trailer video data
-- Embedded the Youtube video and make it autoplay
+- Embedded the Youtube video and make it auto-play
 - Build Secondary component
 - build movies List
 - Build Movie card
 - Build Custom hooks for different categories of movies
 - GPT Search Page
 - GPT Search Bar
-- Multi-language Feature 
+- Multi-language Feature
+- GEt OpenAI Api key
+- Gpt Search API call
+- Fetched GPT movie suggestion
+- Created gpt Slice added Data
+- Reused movie list component to make movie container
+- Use memoization
+- Add .env file
+- Add .env file to git ignore
+- Made fully responsive
+- Footer
+
 
 #Features
 

@@ -12,7 +12,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
-  const showGptSearch = useSelector(store=>store.gpt.showGptSearch)
+  const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
   //  console.log(user.photoURL);
 
   const handleSignOut = () => {
@@ -53,38 +53,42 @@ const Header = () => {
     dispatch(toggleGptSearchView());
   };
 
-  const handleLanguageChange =(e) =>{
+  const handleLanguageChange = (e) => {
     // console.log(e.target.value)
-    dispatch(changeLanguage(e.target.value))
-  }
+    dispatch(changeLanguage(e.target.value));
+  };
 
   return (
-    <div className="w-full absolute px-14 py-6 bg-gradient-to-b from-black z-10 flex justify-between">
-      <img className="w-40" src={LOGO} alt="logo" />
+    <div className="w-full absolute px-14 py-6 bg-gradient-to-b from-black z-10 flex flex-col md:flex-row  justify-between ">
+      <img className="w-40 md:mx-0 mx-auto" src={LOGO} alt="logo" />
       {user && (
-        <div className="flex p-2">
+        <div className="flex p-2 justify-between">
           {showGptSearch && (
-          <select className="p-2  m-2  bg-gray-600 text-white rounded-lg " onChange={handleLanguageChange}>
-            {SUPPORTED_LANGUAGES.map((lang) => (
-              <option key={lang.identifier} value={lang.identifier}>
-                {lang.name}
-              </option>
-            ))}
-          </select>
-           )};
+            <select
+              className="p-2  m-2  bg-gray-600 text-white rounded-lg "
+              onChange={handleLanguageChange}
+            >
+              {SUPPORTED_LANGUAGES.map((lang) => (
+                <option key={lang.identifier} value={lang.identifier}>
+                  {lang.name}
+                </option>
+              ))}
+            </select>
+          )}
+          ;
           <button
             className="py-2 px-4 mx-4 my-2 bg-red-600 text-white rounded-lg"
             onClick={handleGptSearchClick}
           >
-           {showGptSearch ? "Home": "Search"} 
+            {showGptSearch ? "Home" : "Search"}
           </button>
           <img
-            className="w-12 h-12 rounded-full"
+            className="hidden md:block w-12 h-12 rounded-full"
             alt="userIcon"
             src={user?.photoURL}
           />
-          <button onClick={handleSignOut} className="font-bold text-white">
-            (Sign Out)
+          <button onClick={handleSignOut} className="font-bold py-2 px-8 md:px-4 mx-4 my-2 text-white bg-red-600 rounded-lg">
+            Sign Out
           </button>
         </div>
       )}
